@@ -1,0 +1,55 @@
+﻿<Page x:Name="PageWord" x:Class="Denemelerfalan.AddWord"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Denemelerfalan"
+	  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="540" d:DesignWidth="1020"
+      Title="AddWord" Loaded="PageWord_Loaded">
+
+
+	<Grid Background="#FFDEDEDE">
+
+		<StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,10,774,254" Height="276">
+			<Border BorderThickness="5" BorderBrush="#FF673AB7" CornerRadius="15" Margin="0,5,0,5">
+
+				<TextBox
+					Name="txtTurkce"
+					Width="200"
+					Margin="13,3,13,3"
+					materialDesign:HintAssist.Hint="Türkçe Kelimeyi Giriniz"
+					Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+			</Border>
+			<Border BorderThickness="5" BorderBrush="#FF673AB7" CornerRadius="15" Margin="0,5,0,5">
+
+				<TextBox
+					Name="txtEnglish"
+					Width="200"
+					Margin="13,3,13,3"
+					materialDesign:HintAssist.Hint="İngilizce Kelimeyi Giriniz"
+					Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+			</Border>
+			<Button Width="100" HorizontalAlignment="Right" Margin="10,10,10,10" Name="btnAdd" Click="BtnAdd_Click" >EKLE</Button>
+			<Button Width="100" HorizontalAlignment="Right" Margin="10,10,10,10" Name="btnUpdate" Click="BtnUpdate_Click" >GÜNCELLE</Button>
+			<Button Width="100" HorizontalAlignment="Right" Margin="10,10,10,10" Name="btnDelete" Click="BtnDelete_Click" >SİL</Button>
+
+		</StackPanel>
+
+		<DataGrid x:Name="dataGridWords" HorizontalAlignment="Right" Height="500" Width="642" Margin="0,20,50,0" VerticalAlignment="Top" BorderThickness="5" BorderBrush="Bisque" Background="AntiqueWhite" Foreground="Black" AutoGenerateColumns="False" SelectedCellsChanged="DataGridWords_SelectedCellsChanged">
+			<DataGrid.Columns>
+				<DataGridTextColumn Binding="{Binding id}" Header="id" Width="0"/>
+				<DataGridTextColumn Binding="{Binding englishWord}" Header="İNGİLİZCE" Width="*"/>
+				<DataGridTextColumn Binding="{Binding turkishWord}" Header="TÜRKÇE" Width="*"/>
+				<DataGridTextColumn Binding="{Binding seviye}" Header="SEVİYE" Width="*"/>
+				<DataGridTextColumn Binding="{Binding tarih}" Header="TARİH" Width="*"/>
+			</DataGrid.Columns>
+		</DataGrid>
+
+
+
+
+
+	</Grid>
+</Page>
